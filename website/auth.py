@@ -7,6 +7,10 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
+@auth.route("/home")
+def home():
+    login = request.form.get('login')
+    return render_template("index.html",user =current_user )
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -19,7 +23,8 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+                return render_template("dashboard.html", user=current_user)
+                #return redirect(url_for('views.home'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
