@@ -215,6 +215,58 @@ div.container div.image image {
 }
 
 /*------------------------------------------------------------------------------------------------*/
+div.container-order {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 0 50px 50px -px rgb(0, 0, 0);
+  border-radius: 10px;
+}
+div.container-order div.myform-order {
+  width: 270px;
+  margin-right: 30px;
+}
+div.container-order div.myform-order h2 {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+div.container-order div.myform-order input {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  width: 100%;
+  border-bottom: 2px solid #1c1c1e;
+  margin-bottom: 25px;
+  padding: 7px 0;
+}
+div.container-order div.myform-order button {
+  color: white;
+  background-color: #000000;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 7px 14px;
+}
+div.container-order div.image-order img {
+  border-radius: 10px;
+}
+
+.container-order {
+  position: relative;
+  z-index: 10;
+}
+
+/*------------------------------------------------------------------------------------------------*/
 div.container-sign {
   position: absolute;
   top: 50%;
