@@ -315,3 +315,42 @@ div.container-sign div.image-sign img {
   position: relative;
   z-index: 10;
 }
+/*--------------------------------------------------------------------------------------*/
+div.container-view div.myform-view h3 {
+  margin: 5px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+div.container-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 0 50px 50px -px rgb(0, 0, 0);
+  border-radius: 10px;
+}
+div.container-view div.myform-view {
+  width: 270px;
+  margin-right: 30px;
+}
+div.container-view div.myform-view h2 {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+div.container-view div.image-view img {
+  border-radius: 10px;
+}
+
+.container-view {
+  position: relative;
+  z-index: 10;
+}
