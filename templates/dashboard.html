@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <section class="showcase">
+        <header>
+            <h2 class ="logo">DMS-Net</h2>
+            <ul class="nav_links">
+                <li><a href="{{url_for('dashboard') }}" title="">Dashboard</a></li>
+                <li><a href="{{url_for('profile') }}" title="">My Profile</a></li>
+                <li><a href="{{url_for('logout') }}"  title="">Logout</a></li>
+            </ul>
+        </header>
+        <div class="overlay"></div>
+        <video src="{{ url_for('static', filename='BGVID.mp4') }}" muted loop autoplay></video>
+        <div class="sidebar">
+            <div class="spacer"></div>
+            <ul >
+                <li><h4>Hello, {{type}}</h4></li>
+                <li><a href = '/CreateContract/" "'>Place Order</a></li>
+                <li><a href="{{url_for('listing') }}">Search</a></li>
+                <li><a href="{{url_for('chat') }}">Chat</a></li>
+            </ul>
+        </div>
+        <div class="dashboard">
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Manufacturer Name</th>
+                    <th>Manufacturer ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>View Details</th>
+                </tr></br>
+
+                        {% for (k,v,z,y,w) in data %}
+                        <tr>
+                        <td>{{ w }}</td>
+                        <td>{{ k }}</td>
+                        <td>{{ v }}</td>
+                        <td>{{ z }}</td>
+                        <td>{{ y }}</td>
+                        <td><a href = 'contract/{{w}}'>OPEN LINK</a></td>
+                        </tr>
+        {% endfor %}
+
+            </table>
+        </div>
+    </section>
+</body>
+</html>

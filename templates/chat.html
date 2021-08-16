@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+
+<body >
+    <section class="showcase">
+        <header>
+            <h2 class ="logo">DMS-Net</h2>
+            <ul class="nav_links">
+                <li><a href="{{url_for('dashboard') }}" title="">Dashboard</a></li>
+                <li><a href="{{url_for('profile') }}" title="">My Profile</a></li>
+                <li><a href="{{url_for('logout') }}"  title="">Logout</a></li>
+            </ul>
+        </header>
+    
+        <div class="overlay"></div>
+        <video src="{{ url_for('static', filename='BGVID.mp4') }}" muted loop autoplay></video>
+        <div class="sidebar">
+            <div class="spacer"></div>
+            <ul>
+                <li><h4>Hello,Creator</h4></li>
+                <li><a href = '/CreateContract/" "'>Place Order</a></li>
+                <li><a href="{{url_for('listing') }}">Search</a></li>
+                <li><a href="{{url_for('chat') }}">Chat</a></li>
+            </ul>
+        </div>
+    </section>
+
+<div id="chatbox" style= "margin-left:30%; height:500px; overflow-y: scroll;">
+<h2 class="chath" >Chat Messages</h2>
+<div class = 'a'>
+<span class  ='a'>
+Hi ! How can I help you
+</span>
+</div>
+
+                        {% for (system,user) in chat %}
+
+{% if user%}
+
+<div class = 'b'>
+<span class  ='b'>
+
+      {{user}}
+
+
+</span>
+</div>
+{% endif %}
+
+{% if system %}
+<div class = 'a'>
+<span class  ='a'>
+
+      {{system}}
+
+</span>
+
+</div>
+{% endif %}
+
+
+        {% endfor %}
+
+
+<div class = 'b'>
+<span class  ='b'>
+<form autocomplete="false" action="{{ url_for('chat') }}" method="POST" id = 'form1'>
+                <input autocomplete='off' class="form-control" name ='statement' type="text" placeholder="Enter your statement" aria-label="name" style=" border:none; background: transparent; outline: 0;width = 50%">
+              </form>
+</span>
+</div>
+</div>
+
+</body>
+
+</body>
+</html>
